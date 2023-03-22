@@ -4,7 +4,7 @@ import md5 from 'md5';
 import sitemap from '@astrojs/sitemap';
 
 import { SITE_URL } from './src/consts';
-
+import node from '@astrojs/node';
 
 function pipeline() {
   return [
@@ -173,4 +173,9 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   integrations: [sitemap()],
+  server: { port: 3000, host: true},
+  output: 'server',
+  adapter: node({
+    mode: 'standalone'
+  }),
 });

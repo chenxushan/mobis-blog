@@ -7391,3 +7391,99 @@ blockquote {
 blockquote p {
   display: inline;
 }
+
+/* 增加微信公众号样式 start*/
+.logo-card {
+  --card-height: 200px;
+  --card-width: calc(var(--card-height) / 1.5);
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 10px;
+  perspective: 2000px;
+  margin: 0 10px;
+}
+
+.logo-cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.logo-card:hover .logo-wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.logo-wrapper::before,
+.logo-wrapper::after {
+  content: '';
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.logo-wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.logo-wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.logo-card:hover .logo-wrapper::before,
+.logo-wrapper::after {
+  opacity: 1;
+}
+
+.logo-card:hover .logo-wrapper::after {
+  height: 120px;
+}
+.logo-title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.logo-card:hover .logo-title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.logo-character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.logo-card:hover .logo-character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+/* 增加微信公众号样式 end*/

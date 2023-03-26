@@ -16,30 +16,18 @@
 
 ![首页](./public/preview/preview_index.png)
 
-### 文章黑暗模式
-
-![文章黑暗模式](./public/preview/preview_dark.png?)
-
-### 普通文章
-
-![普通文章模式](./public/preview/preview_light.png)
-
-### 语法高亮
-
-![Syntax](./public/preview/preview_syntaxHighlighting.png)
-
-### 三种图片显示模式
-
-![](./public/preview/preview_different_mode.png)
-
-有三种图片显示模式: wide, big, inline. 当你编写 mark 文件的时候可以指定 wide 或 big 或 inline 到你的图片 alt 属性中, 比如这样:
-
-```markdown
-![alt content|wide](a.png)
+### 部署
+```shell
+#!/bin/sh
+cd ./mobis-blog
+git pull
+# npm install
+# npm install @astrojs/node
+# npm install @astrojs/sitemap
+npm run build
+forever stop ./dist/server/entry.mjs
+forever start ./dist/server/entry.mjs
 ```
-
-<strong>分割符号是`|`,默认的模式为 `big`.</strong>
-
 ## 🚀 项目结构
 
 在这个项目中，你可以看到如下结构
@@ -93,4 +81,5 @@
 
 ## 👀 想了解更多？
 
-正在撰写相关文章。
+- https://www.handsome-css.com/others
+

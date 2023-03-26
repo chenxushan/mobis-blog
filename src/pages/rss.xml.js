@@ -5,8 +5,8 @@ export async function get() {
   let items = await pagesGlobToRssItems(import.meta.glob('./**/*.md'));
 
   return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
+    title: "莫比乌斯",
+    description: "我想和这个世界谈谈",
     site: SITE_URL,
     items: items.sort((a, b) => Date.parse(b.pubDate) - Date.parse(a.pubDate)),
     customData: `<language>zh-cn</language>`,

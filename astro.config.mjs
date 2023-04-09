@@ -173,7 +173,7 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   integrations: [sitemap()],
-  server: { port: 3000, host: true},
+  server: { port: 80, host: true},
   output: 'server',
   adapter: node({
     mode: 'standalone'
